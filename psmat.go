@@ -3,7 +3,7 @@ package psmat
 import (
 	"sync"
 
-	"go.nhat.io/python3"
+	python3 "go.nhat.io/python/v3"
 )
 
 const moduleName = "psMat"
