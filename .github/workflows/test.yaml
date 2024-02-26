@@ -45,14 +45,16 @@ jobs:
       - name: Checkout code
         uses: nhatthm/gh-actions/checkout@master
 
-      - name: Setup Environment
-        run: |
-          make "$GITHUB_ENV"
-
       - name: Install Go
         uses: nhatthm/gh-actions/setup-go@master
         with:
           go-version: ${{ matrix.go-version }}
+
+      - name: Setup Environment
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+          make "$GITHUB_ENV"
 
       - name: Install Dependencies
         shell: bash
