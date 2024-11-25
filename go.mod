@@ -3,7 +3,7 @@ module go.nhat.io/psmat
 go 1.22
 
 require (
-	github.com/stretchr/testify v1.9.0
+	github.com/stretchr/testify v1.10.0
 	go.nhat.io/python/v3 v3.11.1
 )
 
