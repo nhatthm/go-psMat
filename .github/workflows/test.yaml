@@ -48,7 +48,7 @@ jobs:
         env:
           PYTHON_VERSION: ${{ needs.setup.outputs.python-version }}
         run: |
-          apk --no-cache add ca-certificates bash curl py3-fontforge git make jq tar
+          apk --no-cache add ca-certificates bash curl py3-fontforge git make jq tar gcc g++ pkgconfig gpg
           ln -s /usr/lib/python${PYTHON_VERSION}/site-packages/fontforge.so /usr/local/lib/python${PYTHON_VERSION}/site-packages/fontforge.so
           ln -s /usr/lib/python${PYTHON_VERSION}/site-packages/psMat.so /usr/local/lib/python${PYTHON_VERSION}/site-packages/psMat.so
 
@@ -67,6 +67,8 @@ jobs:
           make "$GITHUB_ENV"
 
       - name: Test
+        env:
+          CGO_ENABLED: 1
         run: |
           make test
 
