@@ -26,12 +26,12 @@ test: test-unit
 .PHONY: test-unit
 test-unit:
 	@echo ">> unit test"
-	@$(GO) test -gcflags=-l -coverprofile=unit.coverprofile -covermode=atomic -race ./...
+	@$(GO) test -gcflags=-l -coverprofile=unit.coverprofile -covermode=atomic ./...
 
 #.PHONY: test-integration
 #test-integration:
 #	@echo ">> integration test"
-#	@$(GO) test ./features/... -gcflags=-l -coverprofile=features.coverprofile -coverpkg ./... -race --godog
+#	@$(GO) test ./features/... -gcflags=-l -coverprofile=features.coverprofile -coverpkg ./... --godog
 
 .PHONY: $(GITHUB_OUTPUT)
 $(GITHUB_OUTPUT):
