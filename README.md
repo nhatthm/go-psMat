@@ -12,7 +12,8 @@
 
 ## Prerequisites
 
-- `Go >= 1.22`
+- `Go >= 1.24`
+- `python = 3.12`
 
 ## Install
 
